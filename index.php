@@ -11,9 +11,7 @@
     $quizID = rand(1,3);
     echo $quizID;
 
-
     //insert html header here
-
 
     if ($quizID == 1) {
         $array = array(
@@ -84,7 +82,7 @@
             <form action='answers.php?id=$arr[quizID]' method='post' id='quizForm' id='$arr[quizID]'>
                 <ol>
                     <li>
-                    <h3>[question 1]$arr[q1]</h3>
+                    <h3>$arr[q1]</h3>
                     
                     <div>
                     <input type='radio' name="answer1" id="answer1" value="A" >
@@ -109,7 +107,7 @@
                     
                     
                     <li>
-                    <h3>[question 2]$arr[q2]</h3>
+                    <h3>$arr[q2]</h3>
                     
                     <div>
                     <input type='radio' name="answer2" id="answer2" value="A" >
@@ -135,7 +133,7 @@
                     
                     
                     <li>
-                    <h3>[question 3]$arr[q3]</h3>
+                    <h3>$arr[q3]</h3>
                     
                     <div>
                     <input type='radio' name="answer3" id="answer3" value="A" >
