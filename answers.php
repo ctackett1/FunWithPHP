@@ -35,7 +35,6 @@ if ($formID == 2) {
 }
 
 if ($formID == 3) {
-    //change these values to correct question answers!
     if ($answer1 == "D") {
         $score++;
     }
