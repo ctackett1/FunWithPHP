@@ -5,43 +5,166 @@
 </head>
 <body>
 <div>
+
     <?php
-    include 'questions.php';
-    include 'answers.php';
-    // here document creates an html form within php tags
-    print <<<_HTML_
-    <form method="post" action="$_SERVER[PHP_SELF]">
-        First Name: <input type="text" name="fname"><br>
-        Last Name: <input type="text" name="lname"><br>
-        <input type="submit">
-    </form>
-    _HTML_;
+    //sets quiz id for randomized questions
+    $quizID = rand(1,3);
+    echo $quizID;
 
-    print <<<__HTML__
-    <form action="answers.php" method="post">
-    <input type="radio" id="Button1"
-           name="multi" value="choice1">
-    <label for="Button1">Choice 1</label><br>
-                
-    <input type="radio" id="Button2"
-           name="multi" value="">
-    <label for="Button2">Choice 2</label><br>
-                
-    <input type="radio" id="Button3"
-           name="multi" value="">
-    <label for="Button3">Choice 3</label><br>
-    <input type="submit" value="Submit">
-    </form>
-    __HTML__;
 
-    if ($_POST['fname'] && $_POST['lname']) {
-        print "Hello, ";
-        print $_POST['fname'];
-        print " ";
-        print $_POST['lname'];
-    } elseif (!$_POST['fname'] || !$_POST['lname']){
-        print "Please enter both your first name and last name.";
+    //insert html header here
+
+
+    if ($quizID == 1) {
+        $array = array(
+            "quizID" => 1,
+            "q1" => "question1",
+            "answer1A" => "test",
+            "answer1B" => "test",
+            "answer1C" => "test",
+            "answer1D" => "test",
+            "q2" => "question2",
+            "answer2A" =>"test",
+            "answer2B" => "test",
+            "answer2C" => "test",
+            "answer2D" => "test",
+            "q3" => "question3",
+            "answer3A" => "test",
+            "answer3B" => "test",
+            "answer3C" => "test",
+            "answer3D" => "test",
+    );
+        writeQuiz($array);
     }
+    if ($quizID == 2) {
+        $array = array(
+            "quizID" => 2,
+            "q1" => "question1",
+            "answer1A" => "test",
+            "answer1B" => "test",
+            "answer1C" => "test",
+            "answer1D" => "test",
+            "q2" => "question2",
+            "answer2A" =>"test",
+            "answer2B" => "test",
+            "answer2C" => "test",
+            "answer2D" => "test",
+            "q3" => "question3",
+            "answer3A" => "test",
+            "answer3B" => "test",
+            "answer3C" => "test",
+            "answer3D" => "test",
+        );
+        writeQuiz($array);
+    }
+    if ($quizID == 3) {
+        $array = array(
+            "quizID" => 3,
+            "q1" => "question1",
+            "answer1A" => "test",
+            "answer1B" => "test",
+            "answer1C" => "test",
+            "answer1D" => "test",
+            "q2" => "question2",
+            "answer2A" =>"test",
+            "answer2B" => "test",
+            "answer2C" => "test",
+            "answer2D" => "test",
+            "q3" => "question3",
+            "answer3A" => "test",
+            "answer3B" => "test",
+            "answer3C" => "test",
+            "answer3D" => "test",
+        );
+        writeQuiz($array);
+    }
+
+    function writeQuiz($arr) {
+        print <<<_HTML_
+            <form action='answers.php?id=$arr[quizID]' method='post' id='quizForm' id='$arr[quizID]'>
+                <ol>
+                    <li>
+                    <h3>[question 1]$arr[q1]</h3>
+                    
+                    <div>
+                    <input type='radio' name="answer1" id="answer1" value="A" >
+                    <label for="answer1A">A. $arr[answer1A]</label>
+                    </div>
+                    
+                    <div>
+                    <input type='radio' name="answer1" id="answer1" value="B" >
+                    <label for="answer1B">B. $arr[answer1B]</label>
+                    </div>
+                    
+                    <div>
+                    <input type='radio' name="answer1" id="answer1" value="C" >
+                    <label for="answer1C">C. $arr[answer1C]</label>
+                    </div>
+                    
+                    <div>
+                    <input type='radio' name="answer1" id="answer1" value="D" >
+                    <label for="answer1D">D. $arr[answer1D]</label>
+                    </div>
+                    </li>
+                    
+                    
+                    <li>
+                    <h3>[question 2]$arr[q2]</h3>
+                    
+                    <div>
+                    <input type='radio' name="answer2" id="answer2" value="A" >
+                    <label for="answer2A">A. $arr[answer2A]</label>
+                    </div>
+                    
+                    <div>
+                    <input type='radio' name="answer2" id="answer2" value="B" >
+                    <label for="answer2B">B. $arr[answer2B]</label>
+                    </div>
+                    
+                    <div>
+                    <input type='radio' name="answer2" id="answer2" value="C" >
+                    <label for="answer2C">C. $arr[answer2C]</label>
+                    </div>
+                    
+                    <div>
+                    <input type='radio' name="answer2" id="answer2" value="D" >
+                    <label for="answer2D">D. $arr[answer2D]</label>
+                    </div>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                    <h3>[question 3]$arr[q3]</h3>
+                    
+                    <div>
+                    <input type='radio' name="answer3" id="answer3" value="A" >
+                    <label for="answer3A">A. $arr[answer3A]</label>
+                    </div>
+                    
+                    <div>
+                    <input type='radio' name="answer3" id="answer3" value="B" >
+                    <label for="answer3B">B. $arr[answer3B]</label>
+                    </div>
+                    
+                    <div>
+                    <input type='radio' name="answer3" id="answer3" value="C" >
+                    <label for="answer3C">C. $arr[answer3C]</label>
+                    </div>
+                    
+                    <div>
+                    <input type='radio' name="answer3" id="answer3" value="D" >
+                    <label for="answer3D">D. $arr[answer3D]</label>
+                    </div>
+                    </li>
+                
+                </ol>
+                <input type="submit" value="Submit Quiz" />
+            </form>
+        _HTML_;
+
+    }
+
     ?>
 
 </div>
