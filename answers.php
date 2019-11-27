@@ -9,7 +9,6 @@ $answer2 = $_POST['answer2'];
 $answer3 = $_POST['answer3'];
 $score = 0;
 $formID = $_GET['id'];
-
 if ($formID == 1) {
     if ($answer1 == "B") {
         $score++;
@@ -21,7 +20,6 @@ if ($formID == 1) {
         $score++;
     }
 }
-
 if ($formID == 2) {
     if ($answer1 == "A") {
         $score++;
@@ -33,7 +31,6 @@ if ($formID == 2) {
         $score++;
     }
 }
-
 if ($formID == 3) {
     if ($answer1 == "D") {
         $score++;
