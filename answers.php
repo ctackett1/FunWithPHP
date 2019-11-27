@@ -11,37 +11,34 @@ $score = 0;
 $formID = $_GET['id'];
 
 if ($formID == 1) {
-    //change these values to correct question answers!!
     if ($answer1 == "B") {
         $score++;
     }
-    if ($answer2 == "D") {
+    if ($answer2 == "A") {
         $score++;
     }
-    if ($answer3 == "A") {
+    if ($answer3 == "D") {
         $score++;
     }
 }
 
 if ($formID == 2) {
-    //change these values to correct question answers!!
     if ($answer1 == "A") {
         $score++;
     }
     if ($answer2 == "C") {
         $score++;
     }
-    if ($answer3 == "C") {
+    if ($answer3 == "D") {
         $score++;
     }
 }
 
 if ($formID == 3) {
-    //change these values to correct question answers!!
     if ($answer1 == "D") {
         $score++;
     }
-    if ($answer2 == "A") {
+    if ($answer2 == "B") {
         $score++;
     }
     if ($answer3 == "C") {
