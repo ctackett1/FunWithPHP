@@ -33,7 +33,7 @@
 
 </header>
 <body>
-<div class="col-md-12">
+<div class="col-md-12 question_area">
 
     <?php
     //sets quiz id for randomized questions
@@ -43,7 +43,7 @@
     //insert html header here
 
     if ($quizID == 1) {
-      echo "<h3 style=color:blue>Quiz 1 </h3>";
+      echo "<h4 style=color:blue>Quiz 1 </h4>";
         $array = array(
           "quizID" => 1,
            "q1" => "PHP is what type of language?",
@@ -181,7 +181,7 @@
 <footer>
   <div class="col-sm-12">
     <center>
-      <p class="footer" style=background-color:black>Class: CSC246
+      <p class="footer" style=background-color:black;padding:10px>Class: CSC246
         <br>Professor: Dr. Morwick
         <br>###Students###
         <br>Spencer Palemeter

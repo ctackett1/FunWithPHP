@@ -15,15 +15,21 @@ margin-bottom: 5px;
 header{
   background: black;
   color: gold;
+
 }
 
 footer{
   background: black;
   color: gold;
-  position: fixed;
+  position:fixed;
   width: 100%;
   bottom: 0;
   left: 0;
+  margin-bottom: 0;
+  height: 175px
+}
+.question_area{
+  margin-bottom: 200px
 }
 .col-sm-12{
   color: gold;
