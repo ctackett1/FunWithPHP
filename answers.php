@@ -75,7 +75,7 @@ if ($formID == 3) {
         $score++;
     }
 }
-echo "Your score is: $score/3";
+echo "<h1 style=color:blue align='center'>Your score is: $score/3</h1>";
 ?>
 </div>
 </body>

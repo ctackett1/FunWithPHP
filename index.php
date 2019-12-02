@@ -40,8 +40,6 @@
     $quizID = rand(1,3);
     //echo $quizID;
 
-    //insert html header here
-
     if ($quizID == 1) {
       echo "<h4 style=color:blue>Quiz 1 </h4>";
         $array = array(
@@ -172,6 +170,7 @@
                     </li>
                 </ol>
                 <input type="submit" value="Submit Quiz" />
+                <input type="hidden" name="submit_check" value="1" />
             </form>
         _HTML_;
     }
