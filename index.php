@@ -22,9 +22,9 @@
       </div>
     </div>
     <div class="col-sm-11">
-      <center><h1 class="fun_with_php">FUN WITH PHP</h1><center>
+      <center><h1 class="fun_with_php">Missouri Western State University: Quiz</h1><center>
 
-      <center><h5 class="fun_with_php">Missouri Western State University: Quiz</h5><center>
+      <center><h5 class="fun_with_php">FUN WITH PHP</h5><center>
     </div>
     <br>
     </br>
@@ -184,8 +184,8 @@
       <p class="footer" style=background-color:black;padding:10px>Class: CSC246
         <br>Professor: Dr. Morwick
         <br>###Students###
-        <br>Spencer Palemeter
-        <br>Patrick Braciano
+        <br>Spencer Palmeter
+        <br>Patrick Bracciano
         <br>Cecilia Tackett
       </p>
     </center>
