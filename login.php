@@ -9,7 +9,7 @@
 		$Password = isset($_POST['Password']) ? $_POST['Password'] : '';
 				
 		if (isset($logins[$Username]) && $logins[$Username] == $Password){
-			$_SESSION['UserData']['Username']=$logins[$Username];
+			$_SESSION['Username']=$Username;
 			header("location:index.php");
 			exit;
 		} else {	

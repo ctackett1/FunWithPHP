@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,6 +40,14 @@
     //sets quiz id for randomized questions
     $quizID = rand(1,3);
     //echo $quizID;
+
+    print <<<__HTML
+    <form action="logout.php" method="post">
+    <input type="submit" value="Logout">
+</form>
+__HTML;
+
+    echo "Welcome ".$_SESSION['Username'];
 
     if ($quizID == 1) {
       echo "<h4 style=color:blue>Quiz 1 </h4>";
