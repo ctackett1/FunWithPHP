@@ -1,17 +1,14 @@
-/*header*/
-
+/*Styling for the program*/
 body{
-
 font-family: 'Raleway', sans-serif;
-/*background: grey;*/
 max-width: 100%;
 padding: 0%;
 overflow-x: hidden;
 min-width: 100%;
 max-height: 100%;
 margin-bottom: 5px;
-
 }
+
 header{
   background: black;
   color: gold;
@@ -28,9 +25,11 @@ footer{
   margin-bottom: 0;
   height: 175px
 }
+
 .question_area{
   margin-bottom: 200px
 }
+
 .col-sm-12{
   color: gold;
 }

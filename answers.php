@@ -95,8 +95,8 @@ if ($formID == 3) {
 <footer>
   <div class="col-sm-12">
     <center>
-      <p class="footer" style=background-color:black>Class: CSC246
-        <br>Professor: Dr. Morwick
+      <p class="footer" style=background-color:black;padding:10px>Class: CSC246
+        <br>Professor: Dr. Kendall-Morwick
         <br>###Students###
         <br>Spencer Palmeter
         <br>Patrick Bracciano
