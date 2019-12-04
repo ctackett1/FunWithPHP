@@ -1,4 +1,12 @@
 <?php session_start() ?>
+<!--
+ FunWithPHP by Spencer Palmeter, Cecilia Tackett, and Patrick Bracciano
+ Purpose: To generate a functional quiz application with basic session
+ handling and user interaction. The quiz presented is randomly selected from
+ three different options.
+ this project implements several different functions of PHP such as session handling,
+ and function definition and calling.
+ -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,18 +47,36 @@
     <?php
     //sets quiz id for randomized questions
     $quizID = rand(1,3);
-    //echo $quizID;
 
-    print <<<__HTML
-    <form action="logout.php" method="post">
-    <input type="submit" value="Logout">
-</form>
-__HTML;
+    //checks if user is logged in and welcomes them appropriately
+    //creates a login/logout button based on current session state.
+    if ($_SESSION['Username']) {
+        print <<<_HTML_
+            <div>
+                <p style="padding: 5px">
+                    <form action="logout.php" method="post">
+                        <input type="submit" value="Logout">
+                    </form>
+                </p>
+            </div>
+         _HTML_;
+        echo "Welcome ".$_SESSION['Username']."!";
+    } else {
+        print <<<_HTML_
+            <div>
+                <p style="padding: 5px">
+                    <form action="login.php" method="post">
+                        <input type="submit" value="Login">
+                    </form>
+                </p>
+            </div>
+         _HTML_;
+        echo "Welcome Guest!";
+    }
 
-    echo "Welcome ".$_SESSION['Username'];
-
+    //checks randomly assigned quizID and assigns questions and answer selections to array variable
     if ($quizID == 1) {
-      echo "<h4 style=color:blue>Quiz 1 </h4>";
+      echo "<h3 style=color:blue>Quiz 1 </h3>";
         $array = array(
           "quizID" => 1,
            "q1" => "PHP is what type of language?",
@@ -116,6 +142,8 @@ __HTML;
         writeQuiz($array);
     }
 
+    //WriteQuiz is used to generate a generic quiz form, questions and answers to fill the form are
+    //pulled from the $arr variable that is passed to it
     function writeQuiz($arr) {
         print <<<_HTML_
             <form action='answers.php?id=$arr[quizID]' method='post' id='quizForm' id='$arr[quizID]'>
@@ -190,7 +218,7 @@ __HTML;
   <div class="col-sm-12">
     <center>
       <p class="footer" style=background-color:black;padding:10px>Class: CSC246
-        <br>Professor: Dr. Morwick
+        <br>Professor: Dr. Kendall-Morwick
         <br>###Students###
         <br>Spencer Palmeter
         <br>Patrick Bracciano

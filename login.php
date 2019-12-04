@@ -1,13 +1,14 @@
 <?php session_start(); /* Starts the session */
-	
-	
+
 	if(isset($_POST['Submit'])){
 		
 		$logins = array('Spencer' => 'password1','Cecilia' => 'password2','Patrick' => 'password3');
 		
 		$Username = isset($_POST['Username']) ? $_POST['Username'] : '';
 		$Password = isset($_POST['Password']) ? $_POST['Password'] : '';
-				
+
+		//checks if login is successful, then creates a new session variable for username
+        //and redirects to index.php
 		if (isset($logins[$Username]) && $logins[$Username] == $Password){
 			$_SESSION['Username']=$Username;
 			header("location:index.php");

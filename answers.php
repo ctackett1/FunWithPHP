@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ANSWERS</title>
+    <title>Results</title>
     <!-- main.css-->
     <link rel="stylesheet" href="main.css">
     <!-- google fonts-->
@@ -37,11 +37,14 @@
 
 
 <?php
+//assigns user's answers to local variables
 $answer1 = $_POST['answer1'];
 $answer2 = $_POST['answer2'];
 $answer3 = $_POST['answer3'];
 $score = 0;
 $formID = $_GET['id'];
+
+//checks form id to determine which set of correct answers is appropriate to compare user's submitted answers
 if ($formID == 1) {
     if ($answer1 == "B") {
         $score++;
@@ -75,6 +78,7 @@ if ($formID == 3) {
         $score++;
     }
 }
+//returns user's score
 echo "<h1 style=color:blue align='center'>Your score is: $score/3</h1>";
 ?>
 </div>
@@ -85,8 +89,8 @@ echo "<h1 style=color:blue align='center'>Your score is: $score/3</h1>";
       <p class="footer" style=background-color:black>Class: CSC246
         <br>Professor: Dr. Morwick
         <br>###Students###
-        <br>Spencer Palemeter
-        <br>Patrick Braciano
+        <br>Spencer Palmeter
+        <br>Patrick Bracciano
         <br>Cecilia Tackett
       </p>
     </center>
