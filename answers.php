@@ -38,9 +38,9 @@
 
 <?php
 //assigns user's answers to local variables
-$answer1 = $_POST['answer1'];
-$answer2 = $_POST['answer2'];
-$answer3 = $_POST['answer3'];
+$answer1 = isset($_POST['answer1']);
+$answer2 = isset($_POST['answer2']);
+$answer3 = isset($_POST['answer3']);
 $score = 0;
 $formID = $_GET['id'];
 
@@ -78,9 +78,18 @@ if ($formID == 3) {
         $score++;
     }
 }
-//returns user's score
-echo "<h1 style=color:blue align='center'>Your score is: $score/3</h1>";
 ?>
+<div class="row" style="margin-top:150px">
+  <div class="col-sm-12">
+    <h1 style=color:#21889D><center>
+    <?php
+    //returns user's score
+    echo "Your score is: $score/3";
+     ?>
+   </center></h1>
+  </div>
+</div>
+
 </div>
 </body>
 <footer>
