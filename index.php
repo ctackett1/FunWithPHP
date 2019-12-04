@@ -42,38 +42,59 @@
 
 </header>
 <body>
-  <div class="col-md-12 question_area">
+<!--This row is dedicated to the welcome and login portions of the page.
+  checks if user is logged in and welcomes them appropriately
+  creates a login/logout button based on current session state.
+-->
+<!--Welcome the user-->
+<div class="row">
+  <div class="col-md-11 user-welcome">
+    <center><h3 style="margin-top:20px">
       <?php
-      //sets quiz id for randomized questions
-      $quizID = rand(1,3);
-      //checks if user is logged in and welcomes them appropriately
-      //creates a login/logout button based on current session state.
+        if (isset($_SESSION['Username'])) {
+            printf("Welcome ".$_SESSION['Username']."!");
+        } else {
+            echo "Welcome Guest!";
+        }
+       ?>
+   </h3></center>
+  </div>
+  <!--Login option-->
+  <div class="col-md-1">
+    <h5 style="margin-right:10px"><center>
+    <?php
       if (isset($_SESSION['Username'])) {
           print <<<_HTML_
               <div>
-                  <p style="padding: 5px">
+                  <p style="padding:5px">
                       <form action="logout.php" method="post">
                           <input type="submit" value="Logout">
                       </form>
                   </p>
               </div>
            _HTML_;
-          echo "Welcome ".$_SESSION['Username']."!";
       } else {
           print <<<_HTML_
               <div>
-                  <p style="padding: 5px">
+                  <p style="padding:5px">
                       <form action="login.php" method="post">
                           <input type="submit" value="Login">
                       </form>
                   </p>
               </div>
            _HTML_;
-          echo "Welcome Guest!";
       }
+     ?>
+   </center></h5>
+  </div>
+</div>
+  <div class="col-md-12 question_area">
+      <?php
+      //sets quiz id for randomized questions
+      $quizID = rand(1,3);
       //checks randomly assigned quizID and assigns questions and answer selections to array variable
       if ($quizID == 1) {
-        echo "<h3 style=color:blue>Quiz 1 </h3>";
+        echo "<h3 style=color:#800000>Quiz 1 </h3>";
           $array = array(
             "quizID" => 1,
              "q1" => "PHP is what type of language?",
@@ -95,7 +116,7 @@
           writeQuiz($array);
       }
       if ($quizID == 2) {
-          echo "<h3 style=color:blue>Quiz 2 </h3>";
+          echo "<h3 style=color:#800000>Quiz 2 </h3>";
           $array = array(
             "quizID" => 2,
             "q1" => "What 'hidden' variable holds submitted form data?",
@@ -117,7 +138,7 @@
           writeQuiz($array);
       }
       if ($quizID == 3) {
-          echo "<h3 style=color:blue>Quiz 3</h3>";
+          echo "<h3 style=color:#800000>Quiz 3</h3>";
           $array = array(
             "quizID" => 3,
             "q1" => "Which of the following variable names are ineligible?",
